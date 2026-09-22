@@ -4,7 +4,7 @@ Custom personal website for https://ahmedjaffar.ca.
 
 ## Stack
 
-Semantic HTML, CSS, and native HTML details/summary for the interactive career timeline. No framework, npm dependencies, or build step.
+Semantic HTML, CSS, and native HTML details/summary for the interactive career timeline. A small vanilla script handles the scroll-reveal animation. No framework, npm dependencies, or build step.
 
 ## Run locally
 
@@ -18,7 +18,11 @@ Open http://localhost:8000.
 
 - `index.html`: public profile, career timeline, selected projects, and contact links.
 - `styles.css`: responsive dark theme and interactions.
-- `ahmed-portrait.png`: GPT-generated portrait based on Ahmed's supplied public photo.
+- `script.js`: scroll-reveal animation for sections (skipped entirely if reduced motion is on).
+- `ahmed-portrait.png`: GPT-generated portrait based on Ahmed's supplied public photo (source file, not served directly).
+- `ahmed-portrait.jpg` / `ahmed-portrait.webp`: compressed versions of the portrait actually loaded by the site (98% smaller than the PNG).
+- `og-image.jpg`: social share preview image (Open Graph / Twitter card).
+- `robots.txt` / `sitemap.xml`: search engine crawl hints.
 - `CNAME`: custom domain for GitHub Pages.
 - `.nojekyll`: serve static files without Jekyll processing.
 
