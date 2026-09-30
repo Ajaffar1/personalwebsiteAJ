@@ -9,3 +9,5 @@ body{background-image:radial-gradient(ellipse at 85% 10%,#25294b55,transparent 4
 .reveal{opacity:1}.reveal.in-view{animation:revealIn .6s ease}@keyframes revealIn{from{transform:translateY(24px)}to{transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
 @media(prefers-reduced-motion:reduce){.reveal.in-view{animation:none}}
+/* Keep the portrait proportional when its intrinsic HTML dimensions scale down. */
+.portrait img{height:auto}
