@@ -4,7 +4,7 @@ Custom personal website for https://ahmedjaffar.ca.
 
 ## Stack
 
-Semantic HTML, CSS, and native HTML details/summary for the interactive career timeline. A small vanilla script handles the scroll-reveal animation. No framework, npm dependencies, or build step.
+Semantic HTML, CSS, and native HTML details/summary for the interactive career timeline. A small vanilla script adds optional scroll animation; content remains visible if JavaScript fails. No framework, npm dependencies, or build step.
 
 ## Run locally
 
@@ -43,3 +43,11 @@ Keep client details, financial figures, internal work metrics, private contact i
 ## Current migration state
 
 The existing website remains hosted on Sites until GitHub Pages is configured, verified, and the domain is switched. Merely adding CNAME to this repository does not update GoDaddy DNS.
+
+## September 30, 2026 refresh
+
+Typography-led dark design, lime accents, clearer project names, larger small text, mobile layouts, keyboard focus, and a custom 404 page. AI portrait assets are retained as source files but no longer referenced by the site or social metadata. Social cards use text summaries.
+
+SEO: descriptive title and description, canonical URL, matching social metadata, linked WebSite/ProfilePage/Person structured data, sitemap and robots.txt. Existing public profile claims are preserved. These changes do not guarantee rankings or establish Google indexing.
+
+Publishing blocker: the connected Sites project still reports https://ahmedjaffar.ca as its live URL. This environment cannot reach git.chatgpt-team.site (proxy returns HTTP 403), and the Sites workflow scripts are unavailable here. This branch is a reviewed migration-source update, not a deployed Sites revision. Allow the Sites source host in the cloud environment and restore the Sites workflow runtime before publishing to that existing project. Do not switch DNS just to publish this refresh.
