@@ -59,7 +59,10 @@
       "mainEntity": {
         "@id": "https://ahmedjaffar.ca/#person"
       },
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "hasPart": {
+        "@id": "https://ahmedjaffar.ca/#project-list"
+      }
     },
     {
       "@type": "Person",
@@ -85,6 +88,46 @@
       "sameAs": [
         "https://www.linkedin.com/in/ahmedjjaffar/",
         "https://github.com/Ajaffar1"
+      ],
+      "image": "https://ahmedjaffar.ca/ahmed-portrait.jpg"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://ahmedjaffar.ca/#project-list",
+      "name": "Ahmed Jaffar\u2019s selected public software projects",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Sentiment analysis",
+            "codeRepository": "https://github.com/Ajaffar1/TwitterSentiment",
+            "url": "https://github.com/Ajaffar1/TwitterSentiment",
+            "programmingLanguage": "Python"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "World Bank data explorer",
+            "codeRepository": "https://github.com/Ajaffar1/World-Bank-DataBase",
+            "url": "https://github.com/Ajaffar1/World-Bank-DataBase",
+            "programmingLanguage": "Java"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "CashinFruit",
+            "codeRepository": "https://github.com/Ajaffar1/CashinFruit",
+            "url": "https://github.com/Ajaffar1/CashinFruit"
+          }
+        }
       ]
     }
   ]
@@ -94,14 +137,14 @@
 </head>
 <body>
 <a class="skip" href="#main-content">Skip to content</a>
-<header>
+<header class="site-header">
 <a class="brand" href="#">Ahmed Jaffar<span>.</span>
 </a>
 <nav aria-label="Main navigation">
 <a href="#about">About</a>
 <a href="#work">Career</a>
 <a href="#projects">Projects</a>
-<a href="#connect">Connect ↗</a>
+<a href="#connect">Connect</a>
 </nav>
 </header>
 <main id="main-content">
@@ -114,10 +157,10 @@
 <em>Jaffar.</em>
 </h1>
 <div class="hero-tag">Curious by default. Builder at heart.</div>
-<p class="intro">I’m Ahmed Jaffar. I connect technical depth with business perspective, from building a blockchain venture to advising technology companies. A builder’s curiosity. A founder’s instinct.</p>
+<p class="intro">I’m Ahmed Jaffar. I connect technical depth with business perspective, from building a blockchain venture to advising technology companies. Today, I’m a Manager at Deloitte with a computer science foundation and an interest in AI and data science.</p>
 <div class="actions">
-<a class="button" href="https://www.linkedin.com/in/ahmedjjaffar/" target="_blank" rel="noopener">Connect on LinkedIn &nbsp; ↗</a>
-<a href="#work">Explore my journey &nbsp; ↓</a>
+<a class="button" href="https://www.linkedin.com/in/ahmedjjaffar/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+<a href="#work">Explore my journey</a>
 </div>
 </div>
 <div class="portrait">
@@ -143,7 +186,7 @@
 <div class="section-head">
 <div class="eyebrow">01 / A little about me</div>
 <div>
-<h2>A few different hats.<br>One curious mind.</h2>
+<h2>Technology advisory.<br>A builder’s perspective.</h2>
 <p class="section-copy">I’m a Manager at Deloitte with a background in technology, media, and telecommunications advisory. My work has brought me alongside business and technical leaders across software, fintech, and networking, connecting complex ideas to practical business decisions.</p>
 <p class="section-copy">Before that, I co-founded Fibonacci IT, where I helped shape the technical vision for a blockchain venture and worked with teams to turn decentralized systems into product roadmaps. A computer science degree from Western University grounds that experience in hands-on development. Today, AI and data science keep giving me new reasons to experiment.</p>
 </div>
@@ -170,12 +213,21 @@
 <div class="section-head">
 <div class="eyebrow">02 / The journey</div>
 <div>
-<h2>Different chapters.<br>Always moving forward.</h2>
+<h2>From founding<br>to technology advisory.</h2>
 <p class="section-copy">From building a venture to technology advisory. Explore the roles that shaped my perspective.</p>
 </div>
 </div>
+<div class="timeline-tools" hidden>
+<div class="year-nav" role="group" aria-label="Jump to a career chapter">
+<button type="button" data-year="2026" aria-controls="career-2026">2026</button>
+<button type="button" data-year="2024" aria-controls="career-2024">2024</button>
+<button type="button" data-year="2022" aria-controls="career-2022">2022</button>
+<button type="button" data-year="2020" aria-controls="career-2020">2020</button>
+</div>
+<button class="expand-timeline" type="button">Expand all chapters</button>
+</div>
 <div class="timeline">
-<details class="chapter" open>
+<details class="chapter" id="career-2026" open>
 <summary>
 <span class="chapter-year">2026<span>NOW</span>
 </span>
@@ -191,7 +243,7 @@
 </div>
 </div>
 </details>
-<details class="chapter">
+<details class="chapter" id="career-2024">
 <summary>
 <span class="chapter-year">2024</span>
 <span class="chapter-title">Senior TMT Analyst<small>Flow, a Deloitte business · September 2024 to June 2026</small>
@@ -206,7 +258,7 @@
 </div>
 </div>
 </details>
-<details class="chapter">
+<details class="chapter" id="career-2022">
 <summary>
 <span class="chapter-year">2022</span>
 <span class="chapter-title">TMT Analyst<small>Deloitte · September 2022 to September 2024</small>
@@ -221,7 +273,7 @@
 </div>
 </div>
 </details>
-<details class="chapter">
+<details class="chapter" id="career-2020">
 <summary>
 <span class="chapter-year">2020</span>
 <span class="chapter-title">Co-founder<small>Fibonacci IT · September 2020 to August 2022</small>
@@ -242,50 +294,61 @@
 <div class="section-head">
 <div class="eyebrow">03 / Selected projects</div>
 <div>
-<h2>Ideas are good.<br>Building is better.</h2>
+<h2>Software projects.<br>Ideas put into practice.</h2>
 <p class="section-copy">A selection of my public repositories. Explore the source code on GitHub.</p>
 </div>
 </div>
+<div class="project-tools" hidden>
+<div role="group" aria-label="Filter projects" class="project-filters">
+<button type="button" data-filter="all" aria-pressed="true">All projects</button>
+<button type="button" data-filter="data" aria-pressed="false">AI & data</button>
+<button type="button" data-filter="apps" aria-pressed="false">Applications</button>
+</div>
+<p class="project-count" role="status" aria-live="polite">3 projects</p>
+</div>
 <div class="projects">
-<a class="project" href="https://github.com/Ajaffar1/TwitterSentiment" target="_blank" rel="noopener">
+<a class="project" data-category="data" href="https://github.com/Ajaffar1/TwitterSentiment" target="_blank" rel="noopener">
 <span class="num">01</span>
 <div>
-<h3>TwitterSentiment</h3>
-<p>Exploring public opinion through Python, natural language processing, and sentiment visualization.</p>
+<span class="project-stack">Python / NLP / Machine learning</span>
+<h3>Sentiment analysis</h3>
+<p>A Python research project exploring the relationship between social media sentiment and stock prices, using natural language processing and machine learning.</p>
 </div>
-<span class="arrow" aria-hidden="true">↗</span>
+<span class="project-cta">View code</span>
 </a>
-<a class="project" href="https://github.com/Ajaffar1/World-Bank-DataBase" target="_blank" rel="noopener">
+<a class="project" data-category="data apps" href="https://github.com/Ajaffar1/World-Bank-DataBase" target="_blank" rel="noopener">
 <span class="num">02</span>
 <div>
-<h3>World-Bank-DataBase</h3>
+<span class="project-stack">Java / Data visualization</span>
+<h3>World Bank data explorer</h3>
 <p>A university team project: a Java desktop app for browsing and visualizing World Bank development data.</p>
 </div>
-<span class="arrow" aria-hidden="true">↗</span>
+<span class="project-cta">View code</span>
 </a>
-<a class="project" href="https://github.com/Ajaffar1/CashinFruit" target="_blank" rel="noopener">
+<a class="project" data-category="apps" href="https://github.com/Ajaffar1/CashinFruit" target="_blank" rel="noopener">
 <span class="num">03</span>
 <div>
+<span class="project-stack">HackWestern 8 / Personal finance</span>
 <h3>CashinFruit</h3>
 <p>Built at HackWestern 8: a personal finance app that links bank accounts to track spending in one place.</p>
 </div>
-<span class="arrow" aria-hidden="true">↗</span>
+<span class="project-cta">View code</span>
 </a>
 </div>
 </section>
-<div id="connect" class="contact reveal">
+<section id="connect" class="contact reveal">
 <div class="eyebrow">04 / Get in touch</div>
 <h2>Let’s compare notes.<br>And see what’s next.</h2>
 <p>Let's connect over technology, business, and new ideas.</p>
 <div class="actions">
-<a class="button" href="https://www.linkedin.com/in/ahmedjjaffar/" target="_blank" rel="noopener">Say hello on LinkedIn &nbsp; ↗</a>
-<a href="https://github.com/Ajaffar1" target="_blank" rel="noopener">GitHub ↗</a>
+<a class="button" href="https://www.linkedin.com/in/ahmedjjaffar/" target="_blank" rel="noopener">Say hello on LinkedIn</a>
+<a href="https://github.com/Ajaffar1" target="_blank" rel="noopener">GitHub</a>
 </div>
-</div>
+</section>
 </main>
 <footer>
 <span>© 2026 Ahmed Jaffar</span>
-<a href="#">Back to top ↑</a>
+<a href="#">Back to top</a>
 </footer>
 <script src="script.js" defer></script>
 </body>

@@ -44,8 +44,12 @@ Keep client details, financial figures, internal work metrics, private contact i
 
 The existing website remains hosted on Sites until GitHub Pages is configured, verified, and the domain is switched. Merely adding CNAME to this repository does not update GoDaddy DNS.
 
-## SEO and reliability update
+## Interactive profile refresh
 
-Preserves the existing one-photo layout, all visible profile copy, and existing portrait assets. No new generated imagery is used. Updates descriptive metadata, social image alt text, linked WebSite/ProfilePage/Person structured data, and the skip-link target. Content is visible by default even if JavaScript fails; motion respects reduced-motion preferences. Adds a custom noindex 404 page and simplifies the sitemap.
+Keeps the existing single portrait and section layout, with a more cohesive dark, blue, and lime design. No new generated images are used. Adds sticky section navigation, career year shortcuts, expand/collapse controls, and project filters with accessible status feedback. Native career chapters and all project content still work without JavaScript. Motion respects reduced-motion preferences; portrait sizing and enlarged text remain within the mobile viewport.
 
-The live domain remains on the connected Sites project, not this GitHub migration repository. Publishing to that project is blocked in the current environment: the proxy denies git.chatgpt-team.site with HTTP 403, and the Sites workflow runtime scripts are unavailable. GitHub branch pushes work. The available GoDaddy tools only search domain names and cannot read or change DNS or publish websites.
+SEO improvements include descriptive metadata, canonical URL, social image alt text, linked WebSite/ProfilePage/Person structured data, a source-code project ItemList, meaningful headings, repository-grounded project descriptions, robots.txt, sitemap.xml, and a noindex 404 page. These improvements cannot guarantee rankings, and Google Search Console indexing has not been verified.
+
+Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
+
+Publishing remains blocked: the live domain is on the connected Sites project, not this GitHub migration repository. This environment's enforced network policy denies git.chatgpt-team.site and api.github.com with HTTP 403, and the bundled Sites publishing workflow is unavailable. GitHub branch pushes work. Available GoDaddy tools only search domain names; they cannot manage DNS or publish websites. Restore Sites publishing runtime and access to its source host to publish to the existing Site. Do not change DNS to work around this restriction.
