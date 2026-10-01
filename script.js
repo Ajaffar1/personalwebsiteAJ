@@ -32,6 +32,7 @@
         selected = item;
         careerItems.forEach(other => { if (other !== item) other.open = false; });
         updateControls();
+        centerCard(item);
         if (!reducedMotion && item.querySelector('.career-description').animate) {
           item.querySelector('.career-description').animate([{opacity: .3, transform: 'translateY(6px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 220, easing: 'ease-out'});
         }
@@ -52,7 +53,7 @@
     };
     window.addEventListener('hashchange', openCareerLink);
     window.addEventListener('popstate', openCareerLink);
-    select(selected, {center: false});
+    select(selected, {center: true});
     if (location.hash.startsWith('#career-')) requestAnimationFrame(openCareerLink);
   }
   const projectTools = document.querySelector('.project-tools');
@@ -64,9 +65,36 @@
         const category = button.dataset.filter;
         document.querySelectorAll('[data-filter]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
         projects.forEach(project => { project.hidden = category !== 'all' && !project.dataset.category.split(' ').includes(category); });
+        if (!reducedMotion) projects.filter(project => !project.hidden).forEach((project, index) => {
+          if (project.animate) project.animate([{opacity: .35, transform: 'translateY(5px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 180, delay: index * 25, easing: 'ease-out', fill: 'backwards'});
+        });
         const count = projects.filter(project => !project.hidden).length;
         document.querySelector('.project-count').textContent = `${count} ${count === 1 ? 'project' : 'projects'}`;
       });
+    });
+  }
+  const portrait = document.querySelector('.portrait');
+  if (portrait && !reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let framePending = false;
+    let frameX = 0;
+    let frameY = 0;
+    portrait.addEventListener('pointermove', event => {
+      const rect = portrait.getBoundingClientRect();
+      frameX = ((event.clientX - rect.left) / rect.width - .5) * 8;
+      frameY = ((event.clientY - rect.top) / rect.height - .5) * 8;
+      if (!framePending) {
+        framePending = true;
+        requestAnimationFrame(() => {
+          portrait.style.setProperty('--frame-x', `${frameX}px`);
+          portrait.style.setProperty('--frame-y', `${frameY}px`);
+          framePending = false;
+        });
+      }
+    });
+    portrait.addEventListener('pointerleave', () => {
+      frameX = frameY = 0;
+      portrait.style.setProperty('--frame-x', '0px');
+      portrait.style.setProperty('--frame-y', '0px');
     });
   }
   const progress = document.querySelector('.reading-progress span');

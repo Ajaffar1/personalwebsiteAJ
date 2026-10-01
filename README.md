@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 08e8c776f498d9c28fcf876ba882d93fc7822de6, saved as Site version 19. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 5b7d2c593575e475b2811dd585e2fd9e3f668506, saved as Site version 20. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -105,3 +105,7 @@ Replaces slogan-led styling with a name-led serif identity, warmer charcoal/crea
 ## Screenshot-led reference design
 
 Adapts the user-supplied Primitive Labs screenshot into a warm-paper editorial design: serif headings, restrained navigation, coral-orange details, asymmetric whitespace, and an original CSS colour composition framing the existing portrait. Shared project pages and theme metadata match. No reference assets were copied and no new photos were generated. Verified 320–1440px timeline layouts, native/keyboard/deep-link controls, 200% text, filters, portrait, structured data, project pages, script syntax, and diff checks.
+
+## Distinct identity and interaction refinements
+
+Preserves the approved warm editorial layout while replacing coral/multicolour reference styling with deep teal, soft violet, and an original contour-pattern portrait frame. Adds bounded pointer-responsive frame movement, filter-result transitions, project hover cues, and selected-role timeline centering. Reduced-motion preferences disable added movement. Validated responsive/enlarged-text layouts, timeline native/keyboard/deep-link controls, filters, frame movement/reset, reduced motion, page errors, project pages, script syntax, and diff checks.
