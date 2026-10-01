@@ -5,30 +5,62 @@
   const timelineTools = document.querySelector('.timeline-tools');
   const expandButton = document.querySelector('.expand-timeline');
   if (timelineTools && expandButton && chapters.length) {
-    timelineTools.hidden = false;
+    const timeline = document.querySelector('.timeline');
+    const earlier = document.querySelector('.earlier-role');
+    const later = document.querySelector('.later-role');
+    const yearButtons = [...document.querySelectorAll('[data-year]')];
+    let mode = 'focus';
+    let selected = chapters.find(ch => `#${ch.id}` === location.hash) || chapters.find(ch => ch.open) || chapters[0];
     const update = () => {
-      expandButton.textContent = chapters.every(ch => ch.open) ? 'Collapse all chapters' : 'Expand all chapters';
-      document.querySelectorAll('[data-year]').forEach(button => {
-        button.setAttribute('aria-expanded', String(document.getElementById(button.getAttribute('aria-controls')).open));
+      const index = chapters.indexOf(selected);
+      timeline.dataset.mode = mode;
+      expandButton.textContent = mode === 'all' ? 'Focus on one role' : 'View all roles';
+      earlier.disabled = index === chapters.length - 1;
+      later.disabled = index === 0;
+      chapters.forEach(ch => ch.classList.toggle('selected-role', ch === selected));
+      yearButtons.forEach(button => {
+        const chapter = document.getElementById(button.getAttribute('aria-controls'));
+        button.setAttribute('aria-pressed', String(chapter === selected));
+        button.setAttribute('aria-expanded', String(chapter.open));
       });
+      const title = selected.querySelector('.chapter-title');
+      const role = title.firstChild.textContent.trim();
+      document.querySelector('.role-status').textContent = `${role} · ${title.querySelector('small').textContent}`;
     };
+    const selectRole = (chapter, {navigate = false, focus = false, scroll = false} = {}) => {
+      selected = chapter;
+      mode = 'focus';
+      chapters.forEach(ch => { ch.open = ch === chapter; });
+      if (navigate && location.hash !== `#${chapter.id}`) history.pushState(null, '', `#${chapter.id}`);
+      update();
+      if (!reducedMotion && chapter.querySelector('.chapter-body').animate) {
+        chapter.querySelector('.chapter-body').animate([{opacity: .35, transform: 'translateY(8px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 240, easing: 'ease-out'});
+      }
+      if (focus) chapter.querySelector('summary').focus({preventScroll: true});
+      if (scroll) timelineTools.scrollIntoView({behavior: reducedMotion ? 'instant' : 'smooth', block: 'start'});
+    };
+    timelineTools.hidden = false;
+    yearButtons.forEach(button => {
+      button.addEventListener('click', () => selectRole(document.getElementById(button.getAttribute('aria-controls')), {navigate: true}));
+    });
+    earlier.addEventListener('click', () => selectRole(chapters[Math.min(chapters.length - 1, chapters.indexOf(selected) + 1)], {navigate: true}));
+    later.addEventListener('click', () => selectRole(chapters[Math.max(0, chapters.indexOf(selected) - 1)], {navigate: true}));
     expandButton.addEventListener('click', () => {
-      const open = !chapters.every(ch => ch.open);
-      chapters.forEach(ch => { ch.open = open; });
+      mode = mode === 'focus' ? 'all' : 'focus';
+      chapters.forEach(ch => { ch.open = mode === 'all' || ch === selected; });
       update();
     });
-    chapters.forEach(ch => ch.addEventListener('toggle', update));
-    document.querySelectorAll('[data-year]').forEach(button => {
-      button.addEventListener('click', () => {
-        const chapter = document.getElementById(button.getAttribute('aria-controls'));
-        chapter.open = true;
-        if (location.hash !== `#${chapter.id}`) history.pushState(null, "", `#${chapter.id}`);
-        chapter.querySelector('summary').focus({preventScroll: true});
-        chapter.scrollIntoView({behavior: reducedMotion ? 'instant' : 'smooth', block: 'start'});
-        update();
-      });
+    chapters.forEach(ch => {
+      ch.querySelector('summary').addEventListener('click', () => { selected = ch; });
+      ch.addEventListener('toggle', update);
     });
-    update();
+    const openLinkedChapter = () => {
+      const chapter = chapters.find(ch => `#${ch.id}` === location.hash);
+      if (chapter) selectRole(chapter, {focus: true, scroll: true});
+    };
+    window.addEventListener('hashchange', openLinkedChapter);
+    window.addEventListener('popstate', openLinkedChapter);
+    selectRole(selected);
   }
   const projectTools = document.querySelector('.project-tools');
   const projects = [...document.querySelectorAll('.project')];
@@ -44,18 +76,6 @@
       });
     });
   }
-  // Career chapters remain addressable from shared links and browser history.
-  const openLinkedChapter = (focus) => {
-    const chapter = chapters.find(item => `#${item.id}` === location.hash);
-    if (!chapter) return;
-    chapter.open = true;
-    if (focus) chapter.querySelector('summary').focus({preventScroll: true});
-    chapter.scrollIntoView({behavior: 'instant', block: 'start'});
-  };
-  openLinkedChapter(false);
-  window.addEventListener('hashchange', () => openLinkedChapter(true));
-  window.addEventListener('popstate', () => openLinkedChapter(false));
-
   const progress = document.querySelector('.reading-progress span');
   if (progress) {
     let scheduled = false;
