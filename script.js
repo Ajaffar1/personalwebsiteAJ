@@ -2,25 +2,66 @@
 (() => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const careerItems = [...document.querySelectorAll('.career-item')];
-  careerItems.forEach(item => {
-    item.addEventListener('toggle', () => {
-      if (!item.open) return;
-      careerItems.forEach(other => { if (other !== item) other.open = false; });
-      if (!reducedMotion && item.querySelector('.career-description').animate) {
-        item.querySelector('.career-description').animate([{opacity: .4, transform: 'translateY(-4px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 180});
+  const careerRail = document.querySelector('.career-list');
+  if (careerRail && careerItems.length) {
+    const controls = document.querySelector('.glass-controls');
+    const previous = document.querySelector('.career-previous');
+    const next = document.querySelector('.career-next');
+    let selected = careerItems.find(item => `#${item.id}` === location.hash) || careerItems.find(item => item.open) || careerItems[0];
+    const updateControls = () => {
+      const index = careerItems.indexOf(selected);
+      previous.disabled = index === 0;
+      next.disabled = index === careerItems.length - 1;
+    };
+    const centerCard = item => {
+      careerRail.scrollTo({left: item.offsetLeft - (careerRail.clientWidth - item.offsetWidth) / 2, behavior: reducedMotion ? 'instant' : 'smooth'});
+    };
+    const select = (item, {focus = false, center = true} = {}) => {
+      selected = item;
+      careerItems.forEach(other => { other.open = other === item; });
+      updateControls();
+      if (focus) item.querySelector('summary').focus({preventScroll: true});
+      if (center) centerCard(item);
+    };
+    controls.hidden = false;
+    previous.addEventListener('click', () => select(careerItems[Math.max(0, careerItems.indexOf(selected) - 1)]));
+    next.addEventListener('click', () => select(careerItems[Math.min(careerItems.length - 1, careerItems.indexOf(selected) + 1)]));
+    careerItems.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        selected = item;
+        careerItems.forEach(other => { if (other !== item) other.open = false; });
+        updateControls();
+        if (!reducedMotion && item.querySelector('.career-description').animate) {
+          item.querySelector('.career-description').animate([{opacity: .3, transform: 'translateY(6px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 220, easing: 'ease-out'});
+        }
+      });
+      item.querySelector('summary').addEventListener('keydown', event => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const index = careerItems.indexOf(item);
+        const target = event.key === 'Home' ? 0 : event.key === 'End' ? careerItems.length - 1 : Math.max(0, Math.min(careerItems.length - 1, index + (event.key === 'ArrowRight' ? 1 : -1)));
+        select(careerItems[target], {focus: true});
+      });
+      if (!reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        item.addEventListener('pointermove', event => {
+          const rect = item.getBoundingClientRect();
+          item.style.setProperty('--glass-x', `${event.clientX - rect.left}px`);
+          item.style.setProperty('--glass-y', `${event.clientY - rect.top}px`);
+        });
       }
     });
-  });
-  const openCareerLink = (focus = false) => {
-    const item = careerItems.find(role => `#${role.id}` === location.hash);
-    if (!item) return;
-    careerItems.forEach(other => { other.open = other === item; });
-    if (focus) item.querySelector('summary').focus({preventScroll: true});
-    item.scrollIntoView({behavior: 'instant', block: 'start'});
-  };
-  openCareerLink();
-  window.addEventListener('hashchange', () => openCareerLink(true));
-  window.addEventListener('popstate', () => openCareerLink(true));
+    const openCareerLink = () => {
+      const item = careerItems.find(role => `#${role.id}` === location.hash);
+      if (!item) return;
+      select(item, {focus: true});
+      document.querySelector('.glass-timeline').scrollIntoView({behavior: 'instant', block: 'start'});
+    };
+    window.addEventListener('hashchange', openCareerLink);
+    window.addEventListener('popstate', openCareerLink);
+    select(selected, {center: false});
+    if (location.hash.startsWith('#career-')) requestAnimationFrame(openCareerLink);
+  }
   const projectTools = document.querySelector('.project-tools');
   const projects = [...document.querySelectorAll('.project')];
   if (projectTools && projects.length) {

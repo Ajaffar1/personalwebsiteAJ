@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is c1aa414aafc55cbfb1052c147b0b2199dd3fbdac, saved as Site version 11. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 877332764d1785be99e8b67326c17905066c190b, saved as Site version 12. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -71,3 +71,7 @@ Homepage title: Ahmed Jaffar | Manager at Deloitte. Matching description and pro
 ## Simplified company timeline
 
 Current homepage title: Ahmed Jaffar | Technology Advisory & Software Development. Description and profile structured data match the broader technology positioning; actual employment facts still identify Manager at Deloitte. Replaces the career rail, stepper, status text, and nested work panels with four company-wordmark rows showing roles and dates. One concise description expands at a time, with native details/summary fallback. Company markers use typographic labels rather than additional photos. Deep links, mobile layouts, keyboard controls, and enlarged text passed validation.
+
+## Horizontal glass timeline
+
+Chronological horizontal cards use translucent surfaces, backdrop blur, layered highlights, and pointer-driven lighting. Supports native horizontal scrolling and mobile swipe, Previous/Next controls, arrow keys and Home/End on summaries, existing career fragments, and native details without JavaScript. Reduced-motion preferences disable animated transitions; a solid-surface fallback supports browsers without backdrop blur. Navigation boundaries, deep links, native behavior, 320–1440px layouts, and enlarged text passed checks.
