@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is bc487d28016f28784a116387d6b8c5ab3194e064, saved as Site version 9. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 8be0d824cc834e6cdce524642703ca5e0d90150d, saved as Site version 10. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -63,3 +63,7 @@ Project routes, deep links, browser history, internal links, metadata, sitemap, 
 ## Career explorer update
 
 Removed visible chapter permalink links. The chronological year rail now includes role labels; earlier/later controls navigate a focused work panel, and View all roles restores the complete timeline. Selected roles have short work-focused descriptions grounded in the existing career copy. Existing career URL fragments and browser history remain supported. Native summary controls continue working without JavaScript. Role selection, navigation boundaries, view modes, keyboard input, history, mobile layouts, and 200% text checks passed.
+
+## Search title and favicon
+
+Homepage title: Ahmed Jaffar | Manager at Deloitte. Matching description and profile structured data highlight the current role; the hero displays it prominently. Historical career chapters carry data-nosnippet so Google does not use their text for a current-role snippet. Crawlable AJ monogram favicon files replace the embedded data-URI icon across all pages. Google must recrawl before search results can reflect these changes, and may independently rewrite titles/snippets.
