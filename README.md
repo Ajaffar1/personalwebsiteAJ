@@ -52,4 +52,10 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The deployed source commit is d4513f567d987c855705a1627b139bca2fceb487, saved as Site version 7. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 6f9a8ac6f355a75d8b8e0d44e6b485dd2d55f85b, saved as Site version 8. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+
+## Project notes and navigation refinements
+
+Adds three repository-grounded project pages under /projects/, with unique titles and descriptions, canonical URLs, breadcrumb structured data, and sitemap entries. Homepage cards now link to project notes; each page links to its repository and the other projects. Career chapters have shareable fragment links that open the matching chapter and work with browser history. A reading-progress bar and subtle desktop hover lighting refine the existing design.
+
+Project routes, deep links, browser history, internal links, metadata, sitemap, mobile rendering, and 200% text checks passed alongside the existing interaction tests. The current photo remains unchanged.

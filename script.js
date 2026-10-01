@@ -22,6 +22,7 @@
       button.addEventListener('click', () => {
         const chapter = document.getElementById(button.getAttribute('aria-controls'));
         chapter.open = true;
+        if (location.hash !== `#${chapter.id}`) history.pushState(null, "", `#${chapter.id}`);
         chapter.querySelector('summary').focus({preventScroll: true});
         chapter.scrollIntoView({behavior: reducedMotion ? 'instant' : 'smooth', block: 'start'});
         update();
@@ -40,6 +41,44 @@
         projects.forEach(project => { project.hidden = category !== 'all' && !project.dataset.category.split(' ').includes(category); });
         const count = projects.filter(project => !project.hidden).length;
         document.querySelector('.project-count').textContent = `${count} ${count === 1 ? 'project' : 'projects'}`;
+      });
+    });
+  }
+  // Career chapters remain addressable from shared links and browser history.
+  const openLinkedChapter = (focus) => {
+    const chapter = chapters.find(item => `#${item.id}` === location.hash);
+    if (!chapter) return;
+    chapter.open = true;
+    if (focus) chapter.querySelector('summary').focus({preventScroll: true});
+    chapter.scrollIntoView({behavior: 'instant', block: 'start'});
+  };
+  openLinkedChapter(false);
+  window.addEventListener('hashchange', () => openLinkedChapter(true));
+  window.addEventListener('popstate', () => openLinkedChapter(false));
+
+  const progress = document.querySelector('.reading-progress span');
+  if (progress) {
+    let scheduled = false;
+    const updateProgress = () => {
+      const available = document.documentElement.scrollHeight - innerHeight;
+      progress.style.transform = `scaleX(${available > 0 ? Math.min(1, Math.max(0, scrollY / available)) : 0})`;
+      scheduled = false;
+    };
+    const queueProgress = () => {
+      if (!scheduled) { scheduled = true; requestAnimationFrame(updateProgress); }
+    };
+    window.addEventListener('scroll', queueProgress, {passive: true});
+    window.addEventListener('resize', queueProgress);
+    document.addEventListener('toggle', queueProgress, true);
+    window.addEventListener('load', queueProgress);
+    updateProgress();
+  }
+  if (!reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.area').forEach(card => {
+      card.addEventListener('pointermove', event => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--pointer-x', `${event.clientX - rect.left}px`);
+        card.style.setProperty('--pointer-y', `${event.clientY - rect.top}px`);
       });
     });
   }
