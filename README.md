@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 65abe77f2b95849970ef754f11d9f97c97281998, saved as Site version 18. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 08e8c776f498d9c28fcf876ba882d93fc7822de6, saved as Site version 19. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -101,3 +101,7 @@ Reworks the hero around clear professional positioning and a straight portrait/c
 ## Personal editorial direction
 
 Replaces slogan-led styling with a name-led serif identity, warmer charcoal/cream palette, muted lime accents, direct personal introduction, plain section labels, typographic project rows, and an open horizontal timeline. Removes decorative cards, ambient gradients, numbered section labels, sticky header, reading progress, and reveal effects from the visual presentation. Existing portrait, SEO metadata, project notes, filters, and timeline navigation remain. Verified 320–1440px layouts, timeline controls/keyboard/deep links/native behavior, enlarged text, project filters, all project pages, script syntax, and diff checks.
+
+## Screenshot-led reference design
+
+Adapts the user-supplied Primitive Labs screenshot into a warm-paper editorial design: serif headings, restrained navigation, coral-orange details, asymmetric whitespace, and an original CSS colour composition framing the existing portrait. Shared project pages and theme metadata match. No reference assets were copied and no new photos were generated. Verified 320–1440px timeline layouts, native/keyboard/deep-link controls, 200% text, filters, portrait, structured data, project pages, script syntax, and diff checks.
