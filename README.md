@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is fcda512d8d0cdca6e224a437602389f9d6102860, saved as Site version 16. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is ab2fb9866b2413e7d9f75488749a5bce6a0af563, saved as Site version 17. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -93,3 +93,7 @@ Adds oversized lime-gradient identity typography, a layered portrait frame, a fi
 ## Visual finishing pass
 
 Preserves the luminous dark identity while standardizing spacing, heading balance, touch targets, project rows, filter states, breadcrumbs, footer alignment, and project-page typography. Removes the decorative contact symbol and reduces portrait rotation. Validated timeline controls and keyboard/deep links at 320–1440px, native behavior, 200% text, project filters, all project pages, script syntax, and diff checks.
+
+## Work-focused personal redesign
+
+Reworks the hero around clear professional positioning and a straight portrait/current-role caption, shortens background copy, introduces three project cards, and gives contact content a deliberate split layout. Retains the dark/lime identity and horizontal timeline. Public source review of Brittany Chiang’s v4 and Tania Rascia’s website informed hierarchy and work presentation; direct reference-site browsing was blocked in the environment. No reference assets or source code were copied. Validated 320–1440px timeline layouts, keyboard/deep-link/native controls, 200% text, project filters, portrait, structured data, all project pages, script syntax, and diff checks.
