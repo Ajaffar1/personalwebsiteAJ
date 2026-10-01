@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 0ced491b6bfc52e3b5a7e19e25de9d2c3bed3a75, saved as Site version 14. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 182cd6dffb318c9800f9fd29d329b0ba368e613a, saved as Site version 15. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -85,3 +85,7 @@ A cohesive light editorial theme replaces the accumulated neon, tilted-photo, co
 ## Refined dark theme and advisory copy
 
 Restores the distinctive charcoal and lime palette with clean typography, straight portrait presentation, consistent spacing, and dark glass timeline surfaces. Homepage copy and search/social descriptions connect technology advisory with R&D investment, CapEx/OpEx planning, and non-dilutive funding opportunities, without adding financial outcomes. The existing photo and accessible horizontal timeline remain. Mobile/desktop layouts, timeline controls, keyboard navigation, native behavior, enlarged text, project pages, portrait loading, structured data, and script syntax passed checks.
+
+## Expressive visual identity
+
+Adds oversized lime-gradient identity typography, a layered portrait frame, a fine hero grid, blue/lime ambient lighting, luminous glass timeline cards, and refined investment/project/contact surfaces. Responsive layouts keep enlarged text and timeline controls usable; reduced-motion preferences are preserved. Timeline interaction, keyboard/deep-link/native behavior, 320–1440px layouts, 200% text, script syntax, and diff checks passed.
