@@ -43,13 +43,6 @@
         const target = event.key === 'Home' ? 0 : event.key === 'End' ? careerItems.length - 1 : Math.max(0, Math.min(careerItems.length - 1, index + (event.key === 'ArrowRight' ? 1 : -1)));
         select(careerItems[target], {focus: true});
       });
-      if (!reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-        item.addEventListener('pointermove', event => {
-          const rect = item.getBoundingClientRect();
-          item.style.setProperty('--glass-x', `${event.clientX - rect.left}px`);
-          item.style.setProperty('--glass-y', `${event.clientY - rect.top}px`);
-        });
-      }
     });
     const openCareerLink = () => {
       const item = careerItems.find(role => `#${role.id}` === location.hash);
@@ -92,15 +85,6 @@
     document.addEventListener('toggle', queueProgress, true);
     window.addEventListener('load', queueProgress);
     updateProgress();
-  }
-  if (!reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    document.querySelectorAll('.area').forEach(card => {
-      card.addEventListener('pointermove', event => {
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty('--pointer-x', `${event.clientX - rect.left}px`);
-        card.style.setProperty('--pointer-y', `${event.clientY - rect.top}px`);
-      });
-    });
   }
   if (!('IntersectionObserver' in window)) return;
   if (!reducedMotion) {

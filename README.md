@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 877332764d1785be99e8b67326c17905066c190b, saved as Site version 12. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 0aa7a6a841eca9ebd45b74a25238bda6a83821cd, saved as Site version 13. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -75,3 +75,9 @@ Current homepage title: Ahmed Jaffar | Technology Advisory & Software Developmen
 ## Horizontal glass timeline
 
 Chronological horizontal cards use translucent surfaces, backdrop blur, layered highlights, and pointer-driven lighting. Supports native horizontal scrolling and mobile swipe, Previous/Next controls, arrow keys and Home/End on summaries, existing career fragments, and native details without JavaScript. Reduced-motion preferences disable animated transitions; a solid-surface fallback supports browsers without backdrop blur. Navigation boundaries, deep links, native behavior, 320–1440px layouts, and enlarged text passed checks.
+
+## Editorial redesign
+
+A cohesive light editorial theme replaces the accumulated neon, tilted-photo, coloured-panel, and heavy-glass styles. Serif identity and section headings pair with restrained sans-serif body text, consistent spacing, fine borders, and muted green accents. The existing portrait is displayed straight; repetitive slogans are removed. The horizontal timeline retains subtle translucent cards and accessible navigation. Homepage, project notes, and 404 page share the same theme. Unused pointer-effect code is removed.
+
+320–1440px timeline checks, keyboard navigation, deep links, reduced-motion/native behavior, 200% text, project filters, project routes, portrait loading, and structured-data checks passed.
