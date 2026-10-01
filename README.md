@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 566627291d03e391849e7829cab89c1b880b6e2b, saved as Site version 21. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is d5d930737cc7c46664e164db46f5856ddaa22561, saved as Site version 22. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -113,3 +113,7 @@ Preserves the approved warm editorial layout while replacing coral/multicolour r
 ## Clean portrait presentation
 
 Removes the contour frame, violet corner, decorative padding, and frame-pointer handler. Displays the existing photo directly with an understated caption. Script syntax and diff checks passed.
+
+## Editorial hierarchy refinement
+
+Develops the approved screenshot direction with larger identity typography, black/grey serif heading hierarchy, cleaner portrait caption, refined content alignment, more generous work rows, and stronger link/control states. Keeps teal identity, unframed photo, timeline interactions, filters, and SEO. Verified 320–1440px timeline layouts, keyboard/deep links/native controls, enlarged text, filters, unframed photo, project pages, syntax, and diff checks.
