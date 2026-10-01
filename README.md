@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is ab2fb9866b2413e7d9f75488749a5bce6a0af563, saved as Site version 17. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 65abe77f2b95849970ef754f11d9f97c97281998, saved as Site version 18. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -97,3 +97,7 @@ Preserves the luminous dark identity while standardizing spacing, heading balanc
 ## Work-focused personal redesign
 
 Reworks the hero around clear professional positioning and a straight portrait/current-role caption, shortens background copy, introduces three project cards, and gives contact content a deliberate split layout. Retains the dark/lime identity and horizontal timeline. Public source review of Brittany Chiang’s v4 and Tania Rascia’s website informed hierarchy and work presentation; direct reference-site browsing was blocked in the environment. No reference assets or source code were copied. Validated 320–1440px timeline layouts, keyboard/deep-link/native controls, 200% text, project filters, portrait, structured data, all project pages, script syntax, and diff checks.
+
+## Personal editorial direction
+
+Replaces slogan-led styling with a name-led serif identity, warmer charcoal/cream palette, muted lime accents, direct personal introduction, plain section labels, typographic project rows, and an open horizontal timeline. Removes decorative cards, ambient gradients, numbered section labels, sticky header, reading progress, and reveal effects from the visual presentation. Existing portrait, SEO metadata, project notes, filters, and timeline navigation remain. Verified 320–1440px layouts, timeline controls/keyboard/deep links/native behavior, enlarged text, project filters, all project pages, script syntax, and diff checks.
