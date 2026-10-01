@@ -73,30 +73,6 @@
       });
     });
   }
-  const portrait = document.querySelector('.portrait');
-  if (portrait && !reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    let framePending = false;
-    let frameX = 0;
-    let frameY = 0;
-    portrait.addEventListener('pointermove', event => {
-      const rect = portrait.getBoundingClientRect();
-      frameX = ((event.clientX - rect.left) / rect.width - .5) * 8;
-      frameY = ((event.clientY - rect.top) / rect.height - .5) * 8;
-      if (!framePending) {
-        framePending = true;
-        requestAnimationFrame(() => {
-          portrait.style.setProperty('--frame-x', `${frameX}px`);
-          portrait.style.setProperty('--frame-y', `${frameY}px`);
-          framePending = false;
-        });
-      }
-    });
-    portrait.addEventListener('pointerleave', () => {
-      frameX = frameY = 0;
-      portrait.style.setProperty('--frame-x', '0px');
-      portrait.style.setProperty('--frame-y', '0px');
-    });
-  }
   const progress = document.querySelector('.reading-progress span');
   if (progress) {
     let scheduled = false;

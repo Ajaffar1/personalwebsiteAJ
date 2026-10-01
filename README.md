@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 5b7d2c593575e475b2811dd585e2fd9e3f668506, saved as Site version 20. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 566627291d03e391849e7829cab89c1b880b6e2b, saved as Site version 21. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -109,3 +109,7 @@ Adapts the user-supplied Primitive Labs screenshot into a warm-paper editorial d
 ## Distinct identity and interaction refinements
 
 Preserves the approved warm editorial layout while replacing coral/multicolour reference styling with deep teal, soft violet, and an original contour-pattern portrait frame. Adds bounded pointer-responsive frame movement, filter-result transitions, project hover cues, and selected-role timeline centering. Reduced-motion preferences disable added movement. Validated responsive/enlarged-text layouts, timeline native/keyboard/deep-link controls, filters, frame movement/reset, reduced motion, page errors, project pages, script syntax, and diff checks.
+
+## Clean portrait presentation
+
+Removes the contour frame, violet corner, decorative padding, and frame-pointer handler. Displays the existing photo directly with an understated caption. Script syntax and diff checks passed.
