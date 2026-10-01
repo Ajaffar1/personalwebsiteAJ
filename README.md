@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 182cd6dffb318c9800f9fd29d329b0ba368e613a, saved as Site version 15. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is fcda512d8d0cdca6e224a437602389f9d6102860, saved as Site version 16. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -89,3 +89,7 @@ Restores the distinctive charcoal and lime palette with clean typography, straig
 ## Expressive visual identity
 
 Adds oversized lime-gradient identity typography, a layered portrait frame, a fine hero grid, blue/lime ambient lighting, luminous glass timeline cards, and refined investment/project/contact surfaces. Responsive layouts keep enlarged text and timeline controls usable; reduced-motion preferences are preserved. Timeline interaction, keyboard/deep-link/native behavior, 320–1440px layouts, 200% text, script syntax, and diff checks passed.
+
+## Visual finishing pass
+
+Preserves the luminous dark identity while standardizing spacing, heading balance, touch targets, project rows, filter states, breadcrumbs, footer alignment, and project-page typography. Removes the decorative contact symbol and reduces portrait rotation. Validated timeline controls and keyboard/deep links at 320–1440px, native behavior, 200% text, project filters, all project pages, script syntax, and diff checks.
