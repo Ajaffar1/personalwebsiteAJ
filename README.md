@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is 8be0d824cc834e6cdce524642703ca5e0d90150d, saved as Site version 10. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is c1aa414aafc55cbfb1052c147b0b2199dd3fbdac, saved as Site version 11. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -67,3 +67,7 @@ Removed visible chapter permalink links. The chronological year rail now include
 ## Search title and favicon
 
 Homepage title: Ahmed Jaffar | Manager at Deloitte. Matching description and profile structured data highlight the current role; the hero displays it prominently. Historical career chapters carry data-nosnippet so Google does not use their text for a current-role snippet. Crawlable AJ monogram favicon files replace the embedded data-URI icon across all pages. Google must recrawl before search results can reflect these changes, and may independently rewrite titles/snippets.
+
+## Simplified company timeline
+
+Current homepage title: Ahmed Jaffar | Technology Advisory & Software Development. Description and profile structured data match the broader technology positioning; actual employment facts still identify Manager at Deloitte. Replaces the career rail, stepper, status text, and nested work panels with four company-wordmark rows showing roles and dates. One concise description expands at a time, with native details/summary fallback. Company markers use typographic labels rather than additional photos. Deep links, mobile layouts, keyboard controls, and enlarged text passed validation.

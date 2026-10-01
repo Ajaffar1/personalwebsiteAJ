@@ -1,67 +1,26 @@
 // Native HTML keeps the page useful without JavaScript.
 (() => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const chapters = [...document.querySelectorAll('.chapter')];
-  const timelineTools = document.querySelector('.timeline-tools');
-  const expandButton = document.querySelector('.expand-timeline');
-  if (timelineTools && expandButton && chapters.length) {
-    const timeline = document.querySelector('.timeline');
-    const earlier = document.querySelector('.earlier-role');
-    const later = document.querySelector('.later-role');
-    const yearButtons = [...document.querySelectorAll('[data-year]')];
-    let mode = 'focus';
-    let selected = chapters.find(ch => `#${ch.id}` === location.hash) || chapters.find(ch => ch.open) || chapters[0];
-    const update = () => {
-      const index = chapters.indexOf(selected);
-      timeline.dataset.mode = mode;
-      expandButton.textContent = mode === 'all' ? 'Focus on one role' : 'View all roles';
-      earlier.disabled = index === chapters.length - 1;
-      later.disabled = index === 0;
-      chapters.forEach(ch => ch.classList.toggle('selected-role', ch === selected));
-      yearButtons.forEach(button => {
-        const chapter = document.getElementById(button.getAttribute('aria-controls'));
-        button.setAttribute('aria-pressed', String(chapter === selected));
-        button.setAttribute('aria-expanded', String(chapter.open));
-      });
-      const title = selected.querySelector('.chapter-title');
-      const role = title.firstChild.textContent.trim();
-      document.querySelector('.role-status').textContent = `${role} · ${title.querySelector('small').textContent}`;
-    };
-    const selectRole = (chapter, {navigate = false, focus = false, scroll = false} = {}) => {
-      selected = chapter;
-      mode = 'focus';
-      chapters.forEach(ch => { ch.open = ch === chapter; });
-      if (navigate && location.hash !== `#${chapter.id}`) history.pushState(null, '', `#${chapter.id}`);
-      update();
-      if (!reducedMotion && chapter.querySelector('.chapter-body').animate) {
-        chapter.querySelector('.chapter-body').animate([{opacity: .35, transform: 'translateY(8px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 240, easing: 'ease-out'});
+  const careerItems = [...document.querySelectorAll('.career-item')];
+  careerItems.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (!item.open) return;
+      careerItems.forEach(other => { if (other !== item) other.open = false; });
+      if (!reducedMotion && item.querySelector('.career-description').animate) {
+        item.querySelector('.career-description').animate([{opacity: .4, transform: 'translateY(-4px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 180});
       }
-      if (focus) chapter.querySelector('summary').focus({preventScroll: true});
-      if (scroll) timelineTools.scrollIntoView({behavior: reducedMotion ? 'instant' : 'smooth', block: 'start'});
-    };
-    timelineTools.hidden = false;
-    yearButtons.forEach(button => {
-      button.addEventListener('click', () => selectRole(document.getElementById(button.getAttribute('aria-controls')), {navigate: true}));
     });
-    earlier.addEventListener('click', () => selectRole(chapters[Math.min(chapters.length - 1, chapters.indexOf(selected) + 1)], {navigate: true}));
-    later.addEventListener('click', () => selectRole(chapters[Math.max(0, chapters.indexOf(selected) - 1)], {navigate: true}));
-    expandButton.addEventListener('click', () => {
-      mode = mode === 'focus' ? 'all' : 'focus';
-      chapters.forEach(ch => { ch.open = mode === 'all' || ch === selected; });
-      update();
-    });
-    chapters.forEach(ch => {
-      ch.querySelector('summary').addEventListener('click', () => { selected = ch; });
-      ch.addEventListener('toggle', update);
-    });
-    const openLinkedChapter = () => {
-      const chapter = chapters.find(ch => `#${ch.id}` === location.hash);
-      if (chapter) selectRole(chapter, {focus: true, scroll: true});
-    };
-    window.addEventListener('hashchange', openLinkedChapter);
-    window.addEventListener('popstate', openLinkedChapter);
-    selectRole(selected);
-  }
+  });
+  const openCareerLink = (focus = false) => {
+    const item = careerItems.find(role => `#${role.id}` === location.hash);
+    if (!item) return;
+    careerItems.forEach(other => { other.open = other === item; });
+    if (focus) item.querySelector('summary').focus({preventScroll: true});
+    item.scrollIntoView({behavior: 'instant', block: 'start'});
+  };
+  openCareerLink();
+  window.addEventListener('hashchange', () => openCareerLink(true));
+  window.addEventListener('popstate', () => openCareerLink(true));
   const projectTools = document.querySelector('.project-tools');
   const projects = [...document.querySelectorAll('.project')];
   if (projectTools && projects.length) {
