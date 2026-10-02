@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://ahmedjaffar.ca/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://ahmedjaffar.ca/</loc></url>
+  <url><loc>https://ahmedjaffar.ca/projects/sentiment-analysis/</loc></url>
+  <url><loc>https://ahmedjaffar.ca/projects/world-bank-data-explorer/</loc></url>
+  <url><loc>https://ahmedjaffar.ca/projects/cashinfruit/</loc></url>
+  <url><loc>https://ahmedjaffar.ca/projects/ai-inference-control-plane/</loc></url>
+  <url><loc>https://ahmedjaffar.ca/projects/financial-modeling-toolkit/</loc></url>
 </urlset>
