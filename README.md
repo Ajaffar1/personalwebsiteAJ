@@ -52,7 +52,7 @@ SEO improvements include descriptive metadata, canonical URL, social image alt t
 
 Validation: Chromium at 320, 375, 768, and 1440px verified the existing photo, horizontal overflow, timeline year navigation and expand/collapse, project filtering, active navigation, anchor targets, structured-data parsing, and script errors. Native content and chapters work with JavaScript disabled. Reduced motion and 200% text enlargement checks passed.
 
-Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is d5d930737cc7c46664e164db46f5856ddaa22561, saved as Site version 22. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
+Published successfully to the existing Sites project on October 1, 2026. The latest deployed source commit is a763f78fb25b3ad1dc4ae9374d0a92d661c842c4, saved as Site version 23. Both ahmedjaffar.ca and www.ahmedjaffar.ca report active custom domains and active TLS. No DNS change was needed. This GitHub repository remains a migration copy; merging its PR does not itself deploy the Sites project.
 
 ## Project notes and navigation refinements
 
@@ -117,3 +117,7 @@ Removes the contour frame, violet corner, decorative padding, and frame-pointer 
 ## Editorial hierarchy refinement
 
 Develops the approved screenshot direction with larger identity typography, black/grey serif heading hierarchy, cleaner portrait caption, refined content alignment, more generous work rows, and stronger link/control states. Keeps teal identity, unframed photo, timeline interactions, filters, and SEO. Verified 320–1440px timeline layouts, keyboard/deep links/native controls, enlarged text, filters, unframed photo, project pages, syntax, and diff checks.
+
+## Gallery frame and updated public projects
+
+Adds a fine teal gallery outline, generous mat, and small asymmetrical corner details around the original portrait. Adds AI Inference Control Plane and Financial Modeling Toolkit first in the work section with source-grounded project notes, unique metadata/structured data, GitHub links, and sitemap entries. Updates filters, counts, numbering, and the homepage project ItemList for five projects. Descriptions reflect local/research scope without deployment/performance claims. Verified 320–1440px timeline/navigation, native and enlarged-text behavior, all filter counts, all five project pages, canonical/structured data, page errors, syntax, and diff checks.
